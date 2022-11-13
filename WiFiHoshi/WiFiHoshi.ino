@@ -1,8 +1,8 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 
-const char* ssid = "Eshtad R&D";
-const char* password = "Eshtad88992988";
+const char* ssid = "Yellow Home";
+const char* password = "14253678";
 
 #define host  "http://hoshikala.ir/iot/"
 #define getApp  "loglastjson.php"
@@ -58,6 +58,11 @@ void loop() {
             
   }
    
+}
+
+String SetPayload(char* parameter,char* value){
+  String url = String(setURL) + "&" + String(parameter) + "=" + String(value);
+  return url;
 }
 
 String ParsePayload(char* label){
